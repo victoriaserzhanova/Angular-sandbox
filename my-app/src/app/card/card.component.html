@@ -1,5 +1,25 @@
-<p>card works!</p>
 
-<app-bage></app-bage>
+<p>cardComp</p>
+    <figure class="card__gallery">
+      <img src="#" alt="product card" class="card__gallery-image">
+    </figure>
 
-<app-button></app-button>
+    <div class="card__color-options">
+
+    </div>
+
+    <div class="card__company">Google</div>
+
+    <div class="card__rates">
+      <app-rating></app-rating>
+      <span class="card__reviews"></span>
+    </div>
+
+    <div class="card__actions">
+      <app-button></app-button>
+      <app-icon></app-icon>
+    </div>
+
+    <div class="card__title">Google Pixel 4 64GB</div>
+
+<app-bage [bage]="product.bage"></app-bage>

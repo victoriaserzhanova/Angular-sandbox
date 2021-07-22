@@ -3,6 +3,9 @@ import { CommonModule } from '@angular/common';
 import { CardComponent } from './card.component';
 import { ButtonModule } from '../button/button.module';
 import { BageModule } from '../bage/bage.module';
+import { RatingModule } from '../rating/rating.module';
+import { IconModule } from '../icon/icon.module';
+
 
 
 @NgModule({
@@ -13,6 +16,8 @@ import { BageModule } from '../bage/bage.module';
     CommonModule,
     ButtonModule,
     BageModule,
+    RatingModule,
+    IconModule
   ],
   exports: [CardComponent],
 })
