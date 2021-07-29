@@ -1,6 +1,4 @@
 import { Component } from '@angular/core';
-import { product, products } from './data/product.data';
-import { Product } from './types/card';
 
 @Component({
   selector: 'app-root',
@@ -9,5 +7,4 @@ import { Product } from './types/card';
 })
 export class AppComponent {
   title = 'my-app';
-  product: Product = product
 }
