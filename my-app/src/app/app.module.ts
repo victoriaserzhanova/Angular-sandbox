@@ -1,17 +1,19 @@
+import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppComponent } from './app.component';
 import { ButtonModule } from './button/button.module';
 import { CardModule } from './card/card.module';
 import { DropdownModule } from './dropdown/dropdown.module';
 import { IconTooltipModule } from './icon-tooltip/icon-tooltip.module';
 
+
 @NgModule({
   declarations: [
     AppComponent
   ],
   imports: [
+    CommonModule,
     BrowserModule,
     CardModule,
     DropdownModule,

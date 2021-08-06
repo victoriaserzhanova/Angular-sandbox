@@ -1,4 +1,4 @@
-import { Component, Input, OnInit, OnChanges } from '@angular/core';
+import { Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 import { btnColors, btnSize, isActive, isDisabled } from '../types/btnType';
 
 @Component({
@@ -9,7 +9,9 @@ import { btnColors, btnSize, isActive, isDisabled } from '../types/btnType';
     [class.defaultSize]='size === "defaultSize"'
     [class.small]='size === "small"'
     [class.large]='size === "large"'
-    [disabled]="isDisabled">
+    [class.button-disabled]='isDisabled'
+    [class.active]='innerActive'
+    [attr.disabled]="isDisabled ? '' : null">
     {{btnText}}
     </button>
   `,
@@ -23,6 +25,11 @@ import { btnColors, btnSize, isActive, isDisabled } from '../types/btnType';
   .accent {background-color: #ff4081;}
   .success {background-color: #27b536;}
   .warning {background-color: #ff0040;}
+  .button-disabled { background-color: grey; border: 0px; }
+  .active {
+    cursor: default;
+    border: 2px solid rgb(185, 185, 185);
+  }
   .defaultSize{padding: 10px 15px;font-size: 16px;}
   .large {padding: 15px 25px;font-size: 16px;}
   .small {padding: 5px 10px;font-size: 12px;}
@@ -35,15 +42,17 @@ export class ButtonComponent implements OnInit,OnChanges {
   @Input() isActive: isActive=false
   @Input() isDisabled: isDisabled=false;
 
+  innerActive: boolean = false;
+
   constructor() { }
 
   ngOnInit(): void {
   }
 
-  ngOnChanges(): void {
-    if (this.isActive) {
-      this.color = 'accent'
-      this.size = 'large'
+  ngOnChanges(changes: SimpleChanges): void {
+    const { isActive } = changes;
+    if (isActive && isActive.currentValue) {
+      this.innerActive = isActive.currentValue;
     }
   }
 
