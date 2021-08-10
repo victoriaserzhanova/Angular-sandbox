@@ -1,9 +1,16 @@
 <div style="padding: 24px;">
   <div style="display: flex; justify-content: space-between; width: 600px;">
-    <app-button btnText='Click me' size='large' color='primary'></app-button>
-    <app-button btnText='Click me' size='small' color='primary'></app-button>
-    <app-button btnText='Click me' size='small' color='accent'></app-button>
-    <app-button btnText='disabled' size='small' color='accent' [isDisabled]='disabled'></app-button>
-    <app-button btnText='active' size='small' color='primary' [isActive]='isActive'></app-button>
+    <app-button btnText='Click me' size='large' btnColor='primary'></app-button>
+    <app-button btnText='Click me' size='small' btnColor='primary'></app-button>
+    <app-button btnText='Click me' size='small' btnColor='accent'></app-button>
+    <app-button btnText='disabled' size='small' btnColor='accent' [isDisabled]='disabled'></app-button>
+    <app-button btnText='active' size='small' btnColor='primary' [isActive]='isActive'></app-button>
   </div>
 </div>
+
+<div style="padding: 30px; background-color: violet">
+  <div style="display: flex; justify-content: space-between; width: 300px;">
+    <app-drop-down></app-drop-down>
+  </div>
+</div>
+
