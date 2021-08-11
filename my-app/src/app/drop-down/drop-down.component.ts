@@ -1,22 +1,23 @@
-import { HostListener } from '@angular/core';
-import { Component, Input, OnInit} from '@angular/core';
+import { Component, HostListener, Input, OnInit } from '@angular/core';
 export type  triggerTypes = 'click' | 'hover';
 
 @Component({
   selector: 'app-drop-down',
   template: `
-  <div style="padding: 30px; background-color: rgb(243, 192, 145)">
-    <app-button 
-    btnText='dropdownMenu' 
-    size='defaultSize'
-    btnColor='primary'
-    [isActive]='isOpen'
-    (click)='openMenu()'> 
-    </app-button>
-  </div>
+  <div style="position: relative;">
+    <div style="position: relative;">
+      <app-button 
+      btnText='dropdownMenu' 
+      size='defaultSize'
+      btnColor='primary'
+      [isActive]='isOpen'
+      (click)='openMenu()'> 
+      </app-button>
+    </div>
 
-  <div *ngIf="isOpen" style="padding: 30px; background-color: rgb(130, 186, 238)">
-    <app-menu></app-menu>
+    <div *ngIf="isOpen" style="position: absolute; z-index: 100; width: 100%; border-radius: 10px; border: 1px solid #0099ff; background-color: rgb(130, 186, 238)">
+      <app-menu></app-menu>
+    </div>
   </div>
   `,
   styles: [
