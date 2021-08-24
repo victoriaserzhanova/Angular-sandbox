@@ -1,22 +1,24 @@
-<div style="padding: 24px;">
-  <div style="display: flex; justify-content: space-between; width: 600px;">
+
+<div style="display: flex;padding: 30px; justify-content: space-around; align-items: center; width: 600px;background-color: rgba(160, 224, 62, 0.609)">
+    <h2>Buttons</h2>
     <app-button btnText='Click me' size='large' btnColor='primary'></app-button>
     <app-button btnText='Click me' size='small' btnColor='primary'></app-button>
     <app-button btnText='Click me' size='small' btnColor='accent'></app-button>
     <app-button btnText='disabled' size='small' btnColor='accent' [isDisabled]='disabled'></app-button>
     <app-button btnText='active' size='small' btnColor='primary' [isActive]='isActive'></app-button>
-  </div>
 </div>
 
-<div style="padding: 30px; background-color: violet">
-  <div style="display: flex; justify-content: space-between; width: 300px;">
+
+<div style="padding: 30px;display: flex; justify-content: space-around; width: 600px;background-color: rgb(241, 174, 241)">
+  <div>
+    <h2>Click</h2>
     <app-drop-down></app-drop-down>
   </div>
-</div>
 
-<div style="padding: 30px; background-color: violet">
-  <div style="display: flex; justify-content: space-between; width: 300px;">
+  <div>
+    <h2>Hover</h2>
     <app-drop-down [triggerType]='"hover"'></app-drop-down>
   </div>
 </div>
+
 
